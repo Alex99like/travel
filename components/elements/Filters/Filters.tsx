@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Filters.module.scss'
+import cn from 'classnames'
 
 const cities = [
   { location: 'Paris' },
@@ -10,11 +11,23 @@ const cities = [
   { location: 'Norway' }
 ]
 
+interface IFilter {
+   
+}
+
 export const Filters = () => {
+  const [filter, setFilter] = useState('')
+    
   return (
     <div className={styles.wrapper}>
       {cities.map(city => (
-        <button key={city.location}>{city.location}</button>
+        <button 
+          onClick={() => setFilter(city.location)}
+          key={city.location}
+          className={cn({
+            [styles.active]: city.location === filter
+          })}
+        >{city.location}</button>
       ))}
     </div>
   ) 

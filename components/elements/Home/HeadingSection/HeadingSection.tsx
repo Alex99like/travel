@@ -1,11 +1,11 @@
 import React from 'react'
-import styles from './SearchSection.module.scss'
+import styles from './HeadingSection.module.scss'
 import { Search } from '../../Search/Search'
 import { Filters } from '../../Filters/Filters'
 
 import mapImage from '../../../../assets/images/map.png'
 
-export const SearchSection = () => {
+export const HeadingSection = () => {
   return (
     <section 
       className={styles.section}
@@ -13,8 +13,7 @@ export const SearchSection = () => {
     >
       <div>
         <h1>best places for trip</h1>
-        <Search />
-        <Filters />
+        
       </div>
     </section>
   )

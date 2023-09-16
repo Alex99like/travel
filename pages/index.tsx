@@ -5,7 +5,9 @@ import { Footer } from '@/components/common/footer/Footer'
 import { Layout } from '@/components/common/Layout'
 import { GetServerSideProps } from 'next'
 import { IPlace } from '@/src/types/place'
-import { SearchSection } from '@/components/elements/Home/SearchAction/SearchSection'
+import { HeadingSection } from '@/components/elements/Home/HeadingSection/HeadingSection'
+import { Search } from '@/components/elements/Search/Search'
+import { Filters } from '@/components/elements/Filters/Filters'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,8 +19,10 @@ interface IHome {
 export default function Home({ places }: IHome) {
   return (
     <Layout>
+      <HeadingSection />
       <div style={{ width: '80%', margin: '0 auto' }}>
-        <SearchSection />
+        <Search />
+        <Filters />
       </div>
     </Layout>
   )
