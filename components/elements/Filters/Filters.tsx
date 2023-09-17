@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styles from './Filters.module.scss'
 import cn from 'classnames'
+import { TypeSetState } from '@/types/common'
+import { IPlace } from '@/types/place'
 
 const cities = [
   { location: 'Paris' },
@@ -12,10 +14,10 @@ const cities = [
 ]
 
 interface IFilter {
-   
+   setPlaces: TypeSetState<IPlace[]>
 }
 
-export const Filters = () => {
+export const Filters = ({}: IFilter) => {
   const [filter, setFilter] = useState('')
     
   return (
